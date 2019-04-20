@@ -1,5 +1,8 @@
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://root:t00rdb@ds159527.mlab.com:59527/node-crud-cali', { useMongoClient: true});
+dotenv.load();
+
+mongoose.connect(process.env.MONGO_URL, { useMongoClient: true});
 
 module.exports = mongoose;
